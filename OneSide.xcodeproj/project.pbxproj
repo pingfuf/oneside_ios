@@ -20,9 +20,7 @@
 		4161D8561FAC733200535729 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4161D8551FAC733200535729 /* HomeViewController.m */; };
 		4161D8631FAF0EA400535729 /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4161D8621FAF0EA400535729 /* TempViewController.m */; };
 		4161D8651FB0002700535729 /* ic_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 4161D8641FB0002700535729 /* ic_arrow_down.png */; };
-		4161D8781FB00A6A00535729 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4161D8751FB00A3C00535729 /* libReact.a */; };
-		4161D8791FB00A6A00535729 /* libYoga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4161D8771FB00A3C00535729 /* libYoga.a */; };
-		4161D8871FB02A3200535729 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4161D8861FB02A3200535729 /* Podfile */; };
+		4161D91B1FB044A200535729 /* RCTRootView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4161D91A1FB044A200535729 /* RCTRootView+Util.m */; };
 		8B34B5DCF0ADC1CD6E1353BD /* libPods-OneSide.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2754B9D2A73990A8B2EFBDEE /* libPods-OneSide.a */; };
 		8FD72F79FA8C1A04ED4C4B25 /* libPods-OneSideUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1DE760F29FF7B1720DFC63 /* libPods-OneSideUITests.a */; };
 		B2E61EA1E88713164CA746E7 /* libPods-OneSideTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B16EF78A69417EE84C5252A3 /* libPods-OneSideTests.a */; };
@@ -111,7 +109,8 @@
 		4161D8621FAF0EA400535729 /* TempViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TempViewController.m; sourceTree = "<group>"; };
 		4161D8641FB0002700535729 /* ic_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_arrow_down.png; path = "../../../51talk_android_as/51talkClass_trunk/src/main/res/drawable-xhdpi/ic_arrow_down.png"; sourceTree = "<group>"; };
 		4161D8661FB00A3C00535729 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
-		4161D8861FB02A3200535729 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		4161D9191FB044A200535729 /* RCTRootView+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCTRootView+Util.h"; sourceTree = "<group>"; };
+		4161D91A1FB044A200535729 /* RCTRootView+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RCTRootView+Util.m"; sourceTree = "<group>"; };
 		8888554D42AA444A142A892D /* Pods-OneSideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSideTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSideTests/Pods-OneSideTests.release.xcconfig"; sourceTree = "<group>"; };
 		8ACEBE8019F08DF19C200F41 /* Pods-OneSideTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSideTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSideTests/Pods-OneSideTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9FE98B3D16559EF68FC9B6FD /* Pods-OneSideUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSideUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSideUITests/Pods-OneSideUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,8 +124,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4161D8781FB00A6A00535729 /* libReact.a in Frameworks */,
-				4161D8791FB00A6A00535729 /* libYoga.a in Frameworks */,
 				8B34B5DCF0ADC1CD6E1353BD /* libPods-OneSide.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,7 +167,6 @@
 				4159EC741FAB1D8700223D25 /* OneSideTests */,
 				4159EC7F1FAB1D8700223D25 /* OneSideUITests */,
 				4159EC5A1FAB1D8700223D25 /* Products */,
-				4161D8861FB02A3200535729 /* Podfile */,
 				0D0EEF4A50282ECF411283DF /* Pods */,
 				B5448C767712D6DDC2A92284 /* Frameworks */,
 			);
@@ -191,6 +187,7 @@
 			children = (
 				4159EC8F1FAB1DB400223D25 /* base */,
 				4159EC8E1FAB1DA500223D25 /* home */,
+				4161D9151FB043A600535729 /* rn */,
 				4159EC5C1FAB1D8700223D25 /* AppDelegate.h */,
 				4159EC5D1FAB1D8700223D25 /* AppDelegate.m */,
 				4159EC5F1FAB1D8700223D25 /* ViewController.h */,
@@ -264,6 +261,15 @@
 				4161D8771FB00A3C00535729 /* libYoga.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4161D9151FB043A600535729 /* rn */ = {
+			isa = PBXGroup;
+			children = (
+				4161D9191FB044A200535729 /* RCTRootView+Util.h */,
+				4161D91A1FB044A200535729 /* RCTRootView+Util.m */,
+			);
+			path = rn;
 			sourceTree = "<group>";
 		};
 		B5448C767712D6DDC2A92284 /* Frameworks */ = {
@@ -436,7 +442,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4161D8871FB02A3200535729 /* Podfile in Resources */,
 				4159EC691FAB1D8700223D25 /* LaunchScreen.storyboard in Resources */,
 				4159EC661FAB1D8700223D25 /* Assets.xcassets in Resources */,
 				4159ECBE1FAC0BA900223D25 /* Images.xcassets in Resources */,
@@ -612,6 +617,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4161D91B1FB044A200535729 /* RCTRootView+Util.m in Sources */,
 				4159EC611FAB1D8700223D25 /* ViewController.m in Sources */,
 				4159EC921FAB1DCE00223D25 /* BaseViewController.m in Sources */,
 				4159EC951FAB1EA400223D25 /* TitleView.m in Sources */,
@@ -774,12 +780,14 @@
 			baseConfigurationReference = FF74106CAEA70C1C69A8C3F2 /* Pods-OneSide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OneSide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(POD_ROOT)/Pods\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/React\"",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Yoga\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -797,6 +805,7 @@
 			baseConfigurationReference = D3B352B20F280640DEE19361 /* Pods-OneSide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OneSide/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -816,6 +825,7 @@
 			baseConfigurationReference = 8ACEBE8019F08DF19C200F41 /* Pods-OneSideTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OneSideTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -831,6 +841,7 @@
 			baseConfigurationReference = 8888554D42AA444A142A892D /* Pods-OneSideTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OneSideTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -845,6 +856,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9FE98B3D16559EF68FC9B6FD /* Pods-OneSideUITests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OneSideUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -859,6 +871,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A3F509AC21171C9F6D0D9B2 /* Pods-OneSideUITests.release.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OneSideUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

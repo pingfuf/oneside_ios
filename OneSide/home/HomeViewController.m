@@ -7,7 +7,7 @@
 //
 
 #import "HomeViewController.h"
-
+#import <React/RCTRootView.h>
 @interface HomeViewController ()
 
 @end
@@ -26,7 +26,14 @@
     [button setBackgroundColor:[UIColor blueColor]];
     [button addTarget:self action:@selector(gotoTemp) forControlEvents:UIControlEventTouchUpInside];
     
+    UIButton *btnGotoRn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [btnGotoRn setTitle:@"gotoRn" forState:UIControlStateNormal];
+    [btnGotoRn setFrame:CGRectMake(100, 150, 100, 40)];
+    [btnGotoRn setBackgroundColor:[UIColor yellowColor]];
+    [btnGotoRn addTarget:self action:@selector(gotoRn) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.view addSubview:button];
+    [self.view addSubview:btnGotoRn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,6 +45,17 @@
     NSLog(@"goto temp");
     TempViewController *controller = [[TempViewController alloc] init];
     controller.delegate = self;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)gotoRn {
+    NSLog(@"temp goto rn");
+    NSURL *jsCodeLocation = [NSURL
+                             URLWithString:@"http://172.16.100.169:8081/index.ios.bundle?platform=ios"];
+    RCTRootView *rnRootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation moduleName:@"RNTalk" initialProperties:@{@"scheme" : @"rn://ios/main"} launchOptions:nil];
+    
+    UIViewController *controller = [[UIViewController alloc] init];
+    controller.view = rnRootView;
     [self.navigationController pushViewController:controller animated:YES];
 }
 
