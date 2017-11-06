@@ -18,6 +18,7 @@
 }
 */
 -(void) initView: (int)screenWidth{
+    NSLog(@"screenWidth = %d", screenWidth);
     _mIvLeft = [UIButton buttonWithType:UIButtonTypeCustom];
     [_mIvLeft setImage:[UIImage imageNamed:@"ic_back_black"] forState:UIControlStateNormal];
     [_mIvLeft setFrame:CGRectMake(15, 10, 22, 20)];
@@ -25,21 +26,16 @@
     [self addSubview:_mIvLeft];
     
     _mTvTitle = [[UITextView alloc] init];
-    [_mTvTitle setBackgroundColor:[UIColor blueColor]];
+    [_mTvTitle setBackgroundColor:[UIColor greenColor]];
     [_mTvTitle setFont:[UIFont boldSystemFontOfSize:17]];
-    [_mTvTitle setFrame:CGRectMake(screenWidth / 2 - 50, 0, 100, 40)];
-    [_mTvTitle setText:@""];
-    [_mTvTitle setTextAlignment:NSTextAlignmentCenter];
+    [_mTvTitle setFrame:CGRectMake((screenWidth / 2) - 50, 0, 100, 40)];
     [self addSubview:_mTvTitle];
     
     _mTvRight = [[UITextView alloc]init];
-    [_mTvRight setBackgroundColor:[UIColor blueColor]];
-    [_mTvRight setFrame:CGRectMake(screenWidth - 95, 0, 80, 40)];
+    [_mTvRight setBackgroundColor:[UIColor redColor]];
+    [_mTvRight setFrame:CGRectMake(screenWidth - 80, 0, 80, 40)];
     [_mTvRight setFont:[UIFont boldSystemFontOfSize:17]];
-    [_mTvRight setTextAlignment:NSTextAlignmentRight];
-    [_mTvRight setText:@"Temp"];
     [self addSubview:_mTvRight];
-    NSLog(@"this is initView");
 }
 
 /**
@@ -66,19 +62,5 @@
     [_mTvRight setText:rightTitle];
     [_mIvLeft setHidden: hasBack ? NO : YES];
 }
-
--(void) tempFunc:(int)width param2:(int)b {
-    
-}
-
--(UIViewController *) controller {
-    UIViewController * vc = nil;//_viewDelegate;
-    UIResponder * responder = self.nextResponder;
-    if ([responder isKindOfClass:[UIViewController class]]) {
-        vc = (UIViewController *)responder;
-    }
-    return vc;
-}
-
 
 @end

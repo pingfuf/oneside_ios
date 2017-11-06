@@ -39,5 +39,4 @@
  */
 -(void) setTitle:(NSString *)title hasBack:(BOOL) hasBack rightTitle: (NSString *) rightTitle;
 
--(void) tempFunc:(int)a param2:(int)b;
 @end

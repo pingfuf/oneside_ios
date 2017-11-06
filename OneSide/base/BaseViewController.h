@@ -11,6 +11,9 @@
 
 @interface BaseViewController : UIViewController
 
+@property (nonatomic, nonatomic) int screenWidth;
+@property (nonatomic, nonatomic) int screenHeight;
+
 //标题栏
 @property (nonatomic, strong) TitleView *titleView;
 
